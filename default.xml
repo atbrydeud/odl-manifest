@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <default revision="master"
+           remote="inocybe"
+           sync-j="1"/>
+
+  <project name="odl/odlparent" remote="inocybe" path="odl/odlparent"/>
+  <project name="odl/yangtools" remote="inocybe" path="odl/yangtools"/>
+  <project name="odl/controller" remote="inocybe" path="odl/controller"/>
+  <project name="odl/openflowplugin" remote="inocybe" path="odl/openflowplugin"/>
+</manifest>
