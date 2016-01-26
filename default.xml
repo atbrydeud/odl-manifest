@@ -1,11 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <default revision="master"
-           remote="inocybe"
-           sync-j="1"/>
+  <include name="_remotes.xml"/>
+  <default remote="inocybe" revision="refs/heads/master" sync-j="4"/>
+  <notice>
+    Community OpenDaylight Distribution Sources have been sync'd successfully.
+  </notice>
+<!--  <project path="src/repohooks" name="infra/repohooks"           groups="kernel offset-0" remote="inocybe" />
+  <repo-hooks in-project="infra/repohooks" enabled-list="pre-upload" />  -->
+<!--<project path="dist" name="infra/legal" groups="kernel offset-0" >
+  <copyfile src="" dest="AUTHORS" />
+  <copyfile src="LICENSE" dest="LICENSE" />
+</project> -->
 
-  <project name="odl/odlparent" remote="inocybe" path="odl/odlparent"/>
-  <project name="odl/yangtools" remote="inocybe" path="odl/yangtools"/>
-  <project name="odl/controller" remote="inocybe" path="odl/controller"/>
-  <project name="odl/openflowplugin" remote="inocybe" path="odl/openflowplugin"/>
+  <!-- Build Support Projects -->
+  <project groups="kernel offset-0" name="odl/build-tools" path="scripts">
+     <copyfile src="build-kernel.xml" dest="kernel/pom.xml" />
+  </project>
+  <project groups="kernel offset-0" name="odl/integration" path="distribution"/>
+
+  <!-- Kernel Projects of OpenDaylight -->
+  <project groups="kernel offset-0" name="odl/odlparent" path="kernel/odlparent"/>
+  <project groups="kernel offset-0" name="odl/yangtools" path="kernel/yangtools"/>
+  <project groups="kernel offset-0" name="odl/controller" path="kernel/controller"/>
+  <project groups="kernel offset-0" name="odl/aaa" path="kernel/aaa"/>
+  <project groups="kernel offset-0" name="odl/netconf" path="kernel/netconf"/>
+  <project groups="kernel offset-0" name="odl/mdsal" path="kernel/mdsal"/>
+  <project groups="kernel offset-1" name="odl/dlux" path="kernel/dlux"/>
+
+  <!-- Protocols Projects of OpenDaylight -->
+  <project groups="protocols offset-1" name="odl/bgpcep" path="protocols/bgpcep"/>
+  <project groups="protocols offset-2" name="odl/capwap" path="protocols/capwap"/>
+  <project groups="protocols offset-2" name="odl/iotdm" path="protocols/iotdm"/>
+  <project groups="protocols offset-2" name="odl/lacp" path="protocols/lacp"/>
+  <project groups="protocols offset-2" name="odl/lispflowmapping" path="protocols/lispflowmapping"/>
+  <project groups="protocols offset-2" name="odl/of-config" path="protocols/of-config"/>
+  <project groups="protocols offset-2" name="odl/openflowplugin" path="protocols/openflowplugin"/>
+  <project groups="protocols offset-2" name="odl/ovsdb" path="protocols/ovsdb"/>
+  <project groups="protocols offset-2" name="odl/packetcable" path="protocols/packetcable"/>
+  <project groups="protocols offset-2" name="odl/ofextensions/circuitsw" path="protocols/ofextensions/circuitsw"/>
+  <project groups="protocols offset-2" name="odl/snmp" path="protocols/snmp"/>
+  <project groups="protocols offset-2" name="odl/snmp4sdn" path="protocols/snmp4sdn"/>
+  <project groups="protocols offset-2" name="odl/sxp" path="protocols/sxp"/>
+  <project groups="protocols offset-2" name="odl/ttp" path="protocols/ttp"/>
+  <project groups="protocols offset-2" name="odl/usc" path="protocols/usc"/>
+
+  <!-- Library Projects of OpenDaylight -->
+  <project groups="library offset-1" name="odl/openflowjava" path="library/openflowjava"/>
+  <project groups="library offset-2" name="odl/next" path="library/next"/>
+  <project groups="protocols offset-2" name="odl/tcpmd5" path="library/tcpmd5"/>
+
+  <!-- Extensions for OpenDaylight -->
+  <project groups="services offset-1" name="odl/topoprocessing" path="services/topoprocessing"/>
+  <project groups="services offset-2" name="odl/tsdr" path="services/tsdr"/>
+  <project groups="services offset-2" name="odl/messaging4transport" path="services/messaging4transport"/>
+  <project groups="services offset-2" name="odl/sdninterfaceapp" path="services/sdninterfaceapp"/>
+  <project groups="services offset-2" name="odl/usecplugin" path="services/usecplugin"/>
+  <project groups="services offset-2" name="odl/yang-push" path="services/yang-push"/>
+
+  <!-- Services Projects of OpenDaylight -->
+  <project groups="services offset-2" name="odl/alto" path="services/alto"/>
+  <project groups="services offset-2" name="odl/centinel" path="services/centinel"/>
+  <project groups="services offset-2" name="odl/didm" path="services/didm"/>
+  <project groups="services offset-2" name="odl/faas" path="services/faas"/>
+  <project groups="services offset-2" name="odl/groupbasedpolicy" path="services/groupbasedpolicy"/>
+  <project groups="services offset-2" name="odl/nic" path="services/nic"/>
+  <project groups="services offset-2" name="odl/nemo" path="services/nemo"/>
+  <project groups="services offset-2" name="odl/sfc" path="services/sfc"/>
+  <project groups="services offset-2" name="odl/snbi" path="services/snbi"/>
+  <project groups="services offset-2" name="odl/unimgr" path="services/unimgr"/>
+
+  <!-- Application Projects of OpenDaylight -->
+  <project groups="apps offset-2" name="odl/l2switch" path="apps/l2switch"/>
+  <project groups="apps offset-2" name="odl/netide" path="apps/netide"/>
+  <project groups="apps offset-2" name="odl/neutron" path="apps/neutron"/>
+  <project groups="apps offset-2" name="odl/reservation" path="apps/reservation"/>
+  <project groups="apps offset-2" name="odl/vpnservice" path="apps/vpnservice"/>
+  <project groups="apps offset-2" name="odl/vtn" path="apps/vtn"/>
+
+  <!-- Documentation & Examples of OpenDaylight -->
+  <project groups="docs offset-2" name="odl/docs" path="docs/guides"/>
+
 </manifest>
